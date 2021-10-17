@@ -1,24 +1,16 @@
-# SMUI SvelteKit Example
+# FELion website
 
-An example project implementing [Svelte Material UI](https://github.com/hperrin/svelte-material-ui) with [SvelteKit](https://kit.svelte.dev/).
-
-# Get it Running
-
-1. Clone the repo.
-2. `npm install`
-3. `npm run dev`
-4. http://localhost:3000
 
 # License
 
-Copyright 2021 Hunter Perrin
+Copyright 2021 A.N. Marimuthu
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
+    
     http://www.apache.org/licenses/LICENSE-2.0
-
+    
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
