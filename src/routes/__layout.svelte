@@ -1,28 +1,29 @@
-<script lang="ts">
-	import Button, { Label } from '@smui/button';
-
-	let lightTheme =
-		typeof window === 'undefined' || window.matchMedia('(prefers-color-scheme: light)').matches;
-	function switchTheme() {
-		lightTheme = !lightTheme;
-		let themeLink = document.head.querySelector<HTMLLinkElement>('#theme');
-		if (!themeLink) {
-			themeLink = document.createElement('link');
-			themeLink.rel = 'stylesheet';
-			themeLink.id = 'theme';
-		}
-		themeLink.href = `/smui${lightTheme ? '' : '-dark'}.css`;
-		document.head
-			.querySelector<HTMLLinkElement>('link[href="/smui-dark.css"]')
-			?.insertAdjacentElement('afterend', themeLink);
-	}
+<script>
+	import Drawer from "$lib/ui/Drawer.svelte";
+	let open = false;
 </script>
+<style global lang="scss">
+	@import "../lib/scss/bulma.scss";
+	@import "../lib/scss/global.scss";
+	.parent {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		height: 100vh;
+    	width: 100vw;
 
-<div style="display: flex; justify-content: space-between;">
-	<div class="container"><slot /></div>
-	<div class="container">
-		<Button on:click={switchTheme}>
-			<Label>{lightTheme ? 'Lights off' : 'Lights on'}</Label>
-		</Button>
-	</div>
+		header {padding: 0.5em 1em;}
+	}
+	i {cursor: pointer;}
+</style>
+
+
+
+
+<div class="parent">
+	<header ><i class="material-icons" on:click="{() => {open = !open; console.log({open})}}">menu</i></header>
+	<Drawer bind:open />
+	<main >
+		<!-- <Drawer bind:open /> -->
+		<slot />
+	</main>
 </div>
